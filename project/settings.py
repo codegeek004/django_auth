@@ -77,10 +77,13 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME' : 'django_login',
+        'HOST' : 'localhost',
+        'USER' : 'root',
+        'PASSWORD' : 'root',
+        }
     }
-}
 
 
 # Password validation
@@ -124,8 +127,9 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
-
+AUTH_USER_MODEL = 'authentication.CustomUser'
 
 
 
